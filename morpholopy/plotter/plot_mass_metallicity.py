@@ -247,7 +247,12 @@ def compute_weighted_FeH(X_Fe, X_H, weight):
     log_of_weighted_ratio = np.sum ( (X_Fe/X_H) * weight ) / np.sum( weight )
     log_of_weighted_ratio = np.log10(log_of_weighted_ratio) - Fe_H_Sun
     weight_of_log = np.log10( X_Fe / X_H)
-    weight_of_log[X_Fe==0] = -7
+
+    # Let's not include Fe=0 stars, since that introduces too low values for weight of log,
+    # Also, setting an arbitrary lower limit complicates comparison.
+    nonzero = X_Fe != 0
+    weight_of_log = weight_of_log[nonzero]
+    weight = weight[nonzero]
     weight_of_log = np.sum( weight_of_log * weight) / np.sum(weight) - Fe_H_Sun
 
     return {'log_of_weight': log_of_weight,
