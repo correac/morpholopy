@@ -765,7 +765,7 @@ def compute_metallicity_relation(sim_info, metallicity_data):
         MgFe_Z_lw = metallicity_data['Mg_Fe_Z_weighted_r_band']
         MgFe_Z_lw = np.append(MgFe_Z_lw, MgFe_Z_light_weighted)
         MgFe_Z_w = metallicity_data['Mg_Fe_Z_weighted']
-        OFe_Z_w = np.append(OFe_Z_w, OFe_Z_weighted)
+        MgFe_Z_w = np.append(MgFe_Z_w, MgFe_Z_weighted)
 
         metallicity_data = {
             'Fe_H_median': Fe_H,
