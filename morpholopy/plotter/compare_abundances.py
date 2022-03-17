@@ -426,152 +426,170 @@ def compare_mass_metallicity_relations(sim_data, output_name_list, output_path):
 
     ##############  Fe/H  #################
 
-    Fe_H_median = sim_data['Fe_H_median']
-    Fe_H_mass_weighted = sim_data['Fe_H_mass_weighted']
-    Fe_H_ratio_weighted = sim_data['Fe_H_ratio_weighted']
+    FeH_mw = sim_data['FeH_log_mass_weighted']
+    FeH_mw_r =sim_data['FeH_log_mass_weighted_ratio']
+    FeH_mw_2 = sim_data['FeH_mass_weighted_log']
 
-    ylabel = "Stellar (median) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_median_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_median, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{[\langle\mathrm{Fe}\rangle_{m}/\langle\mathrm{H}\rangle_{m}]}$"
+    output_file = f"{output_path}/Mstellar_FeH_mw_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (mass-weighted) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_mass_weighted_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_mass_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{[\langle\mathrm{Fe/H}\rangle_{m}]}$"
+    output_file = f"{output_path}/Mstellar_FeH_mwr_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (mass-weight of ratio) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_ratio_weighted_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_ratio_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{\langle[\mathrm{Fe/H}]\rangle_{m}}$"
+    output_file = f"{output_path}/Mstellar_FeH_mwr2_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
-    Fe_H_light_weighted = sim_data['Fe_H_light_weighted_r_band_with_mass']
-    ylabel = "Stellar (light-weight of mass) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_light_weighted_r_band_with_mass_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_light_weighted, counter, ylabel, output_name_list, output_file)
+    FeH_mw = sim_data['FeH_log_light_weighted']
+    FeH_mw_r =sim_data['FeH_log_light_weighted_ratio']
+    FeH_mw_2 = sim_data['FeH_light_weighted_log']
 
-    Fe_H_light_weighted_r_band = sim_data['Fe_H_light_weighted_r_band']
-    Fe_H_light_weighted_i_band = sim_data['Fe_H_light_weighted_i_band']
-    Fe_H_light_weighted_Z_band = sim_data['Fe_H_light_weighted_Z_band']
+    ylabel = r"Stellar $10^{[\langle\mathrm{Fe}\rangle_{l}/\langle\mathrm{H}\rangle_{l}]}$"
+    output_file = f"{output_path}/Mstellar_FeH_lw_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (light-weight of ratio) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_light_weighted_r_band_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_light_weighted_r_band, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{[\langle\mathrm{Fe/H}\rangle_{l}]}$"
+    output_file = f"{output_path}/Mstellar_FeH_lwr_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (light-weighted i-band of ratio) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_light_weighted_i_band_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_light_weighted_i_band, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{\langle[\mathrm{Fe/H}]\rangle_{l}}$"
+    output_file = f"{output_path}/Mstellar_FeH_lwr2_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (light-weighted Z-band of ratio) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_light_weighted_Z_band_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_light_weighted_Z_band, counter, ylabel, output_name_list, output_file)
+    FeH_mw = sim_data['FeH_log_metallicity_weighted']
+    FeH_mw_r = sim_data['FeH_log_metallicity_weighted_ratio']
+    FeH_mw_2 = sim_data['FeH_metallicity_weighted_log']
 
-    Fe_H_Z_light_weighted = sim_data['Fe_H_Z_weighted_r_band']
-    ylabel = "Stellar (Z-weight light-weight of ratio) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_Z_light_weighted_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_Z_light_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{[\langle\mathrm{Fe}\rangle_{Z}/\langle\mathrm{H}\rangle_{Z}]}$"
+    output_file = f"{output_path}/Mstellar_FeH_zw_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    Fe_H_Z_weighted = sim_data['Fe_H_Z_weighted']
-    ylabel = "Stellar (Z-weight of ratio) $10^{[\mathrm{Fe/H}]}$"
-    output_file = f"{output_path}/Mstellar_Fe_H_Z_weighted_comparison.png"
-    plot_Fe_H_mass_relation(Mstellar, Fe_H_Z_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"Stellar $10^{[\langle\mathrm{Fe/H}\rangle_{Z}]}$"
+    output_file = f"{output_path}/Mstellar_FeH_zwr_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"Stellar $10^{\langle[\mathrm{Fe/H}]\rangle_{Z}}$"
+    output_file = f"{output_path}/Mstellar_FeH_zwr2_comparison.png"
+    plot_Fe_H_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
     ###################
     ###################
 
-    Mg_Fe_median = sim_data['Mg_Fe_median']
-    ylabel = "(median) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_median_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_median, counter, ylabel, output_name_list, output_file)
+    FeH_mw = sim_data['MgFe_log_mass_weighted']
+    FeH_mw_r = sim_data['MgFe_log_mass_weighted_ratio']
+    FeH_mw_2 = sim_data['MgFe_mass_weighted_log']
 
-    Mg_Fe_mass_weighted = sim_data['Mg_Fe_mass_weighted']
-    ylabel = "(mass-weighted) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_mass_weighted_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_mass_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{Mg}\rangle_{m}/\langle\mathrm{Fe}\rangle_{m}]$"
+    output_file = f"{output_path}/Mstellar_MgFe_mw_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    Mg_Fe_light_weighted = sim_data['Mg_Fe_light_weighted_r_band']
-    ylabel = "(light-weighted r-band) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_light_weighted_r_band_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_light_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{Mg/Fe}\rangle_{m}]$"
+    output_file = f"{output_path}/Mstellar_MgFe_mwr_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
 
-    Mg_Fe_ratio_weighted = sim_data['Mg_Fe_ratio_weighted']
-    ylabel = "(mass-ratio-weighted) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_ratio_weighted_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_ratio_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$\langle[\mathrm{Mg/Fe}]\rangle_{m}$"
+    output_file = f"{output_path}/Mstellar_MgFe_mwr2_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
-    Mg_Fe_ratio_weighted = sim_data['Mg_Fe_light_weighted_r_band_with_mass']
-    ylabel = "(light-weight r-band of mass) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_light_weighted_r_band_with_mass_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_ratio_weighted, counter, ylabel, output_name_list, output_file)
+    FeH_mw = sim_data['MgFe_log_light_weighted']
+    FeH_mw_r = sim_data['MgFe_log_light_weighted_ratio']
+    FeH_mw_2 = sim_data['MgFe_light_weighted_log']
 
-    Mg_Fe_Z_light_weighted = sim_data['Mg_Fe_Z_weighted_r_band']
-    ylabel = "(Z-weight light-weight r-band of ratio) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_Z_light_weighted_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_Z_light_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{Mg}\rangle_{l}/\langle\mathrm{Fe}\rangle_{l}]$"
+    output_file = f"{output_path}/Mstellar_MgFe_lw_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    Mg_Fe_Z_weighted = sim_data['Mg_Fe_Z_weighted']
-    ylabel = "(Z-weight of ratio) [Mg/Fe]"
-    output_file = f"{output_path}/Mstellar_Mg_Fe_Z_weighted_comparison.png"
-    plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe_Z_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{Mg/Fe}\rangle_{l}]$"
+    output_file = f"{output_path}/Mstellar_MgFe_lwr_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"$\langle[\mathrm{Mg/Fe}]\rangle_{l}$"
+    output_file = f"{output_path}/Mstellar_MgFe_lwr2_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
+
+    FeH_mw = sim_data['MgFe_log_metallicity_weighted']
+    FeH_mw_r = sim_data['MgFe_log_metallicity_weighted_ratio']
+    FeH_mw_2 = sim_data['MgFe_metallicity_weighted_log']
+
+    ylabel = r"$[\langle\mathrm{Mg}\rangle_{Z}/\langle\mathrm{Fe}\rangle_{Z}]$"
+    output_file = f"{output_path}/Mstellar_MgFe_zw_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"$[\langle\mathrm{Mg/Fe}\rangle_{Z}]$"
+    output_file = f"{output_path}/Mstellar_MgFe_zwr_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"$\langle[\mathrm{Mg/Fe}]\rangle_{Z}$"
+    output_file = f"{output_path}/Mstellar_MgFe_zwr2_comparison.png"
+    plot_Mg_Fe_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
     ################
     ################
 
-    O_Fe_median = sim_data['O_Fe_median']
-    ylabel = "(median) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_median_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_median, counter, ylabel, output_name_list, output_file)
+    FeH_mw = sim_data['OFe_log_mass_weighted']
+    FeH_mw_r = sim_data['OFe_log_mass_weighted_ratio']
+    FeH_mw_2 = sim_data['OFe_mass_weighted_log']
 
-    O_Fe_mass_weighted = sim_data['O_Fe_mass_weighted']
-    ylabel = "(mass-weighted) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_mass_weighted_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_mass_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{O}\rangle_{m}/\langle\mathrm{Fe}\rangle_{m}]$"
+    output_file = f"{output_path}/Mstellar_OFe_mw_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    O_Fe_ratio_weighted = sim_data['O_Fe_ratio_weighted']
-    ylabel = "(mass-weight of ratio) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_ratio_weighted_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_ratio_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{O/Fe}\rangle_{m}]$"
+    output_file = f"{output_path}/Mstellar_OFe_mwr_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
 
-    O_Fe_light_weighted = sim_data['O_Fe_light_weighted_r_band']
-    ylabel = "(light-weight r-band of ratio) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_light_weighted_r_band_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_light_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$\langle[\mathrm{O/Fe}]\rangle_{m}$"
+    output_file = f"{output_path}/Mstellar_OFe_mwr2_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
-    O_Fe_ratio_weighted = sim_data['O_Fe_light_weighted_r_band_with_mass']
-    ylabel = "(light-weight r-band of mass) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_light_weighted_r_band_with_mass_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_ratio_weighted, counter, ylabel, output_name_list, output_file)
+    FeH_mw = sim_data['OFe_log_light_weighted']
+    FeH_mw_r = sim_data['OFe_log_light_weighted_ratio']
+    FeH_mw_2 = sim_data['OFe_light_weighted_log']
 
-    O_Fe_Z_light_weighted = sim_data['O_Fe_Z_weighted_r_band']
-    ylabel = "(Z-weight light-weight r-band of ratio) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_Z_light_weighted_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_Z_light_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{O}\rangle_{l}/\langle\mathrm{Fe}\rangle_{l}]$"
+    output_file = f"{output_path}/Mstellar_OFe_lw_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
 
-    O_Fe_Z_weighted = sim_data['O_Fe_Z_weighted']
-    ylabel = "(Z-weight of ratio) [O/Fe]"
-    output_file = f"{output_path}/Mstellar_O_Fe_Z_weighted_comparison.png"
-    plot_O_Fe_mass_relation(Mstellar, O_Fe_Z_weighted, counter, ylabel, output_name_list, output_file)
+    ylabel = r"$[\langle\mathrm{O/Fe}\rangle_{l}]$"
+    output_file = f"{output_path}/Mstellar_OFe_lwr_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"$\langle[\mathrm{O/Fe}]\rangle_{l}$"
+    output_file = f"{output_path}/Mstellar_OFe_lwr2_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
+
+    FeH_mw = sim_data['OFe_log_metallicity_weighted']
+    FeH_mw_r = sim_data['OFe_log_metallicity_weighted_ratio']
+    FeH_mw_2 = sim_data['OFe_metallicity_weighted_log']
+
+    ylabel = r"$[\langle\mathrm{O}\rangle_{Z}/\langle\mathrm{Fe}\rangle_{Z}]$"
+    output_file = f"{output_path}/Mstellar_OFe_zw_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"$[\langle\mathrm{O/Fe}\rangle_{Z}]$"
+    output_file = f"{output_path}/Mstellar_OFe_zwr_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw_r, counter, ylabel, output_name_list, output_file)
+
+    ylabel = r"$\langle[\mathrm{O/Fe}]\rangle_{Z}$"
+    output_file = f"{output_path}/Mstellar_OFe_zwr2_comparison.png"
+    plot_O_Fe_mass_relation(Mstellar, FeH_mw_2, counter, ylabel, output_name_list, output_file)
 
     ###################
     ###################
 
     Z_mass_weighted = sim_data['Z_mass_weighted']
     ylabel = "Stellar (mass-weighted) $Z/Z_{\odot}$"
-    output_file = f"{output_path}/Mstellar_Z_mass_weighted_comparison.png"
+    output_file = f"{output_path}/Mstellar_Z_mw_comparison.png"
     plot_metallicity_mass_relation(Mstellar, Z_mass_weighted, counter, ylabel, output_name_list, output_file)
 
-    Z_light_weighted_r_band = sim_data['Z_light_weighted_r_band']
-    Z_light_weighted_i_band = sim_data['Z_light_weighted_i_band']
-    Z_light_weighted_Z_band = sim_data['Z_light_weighted_Z_band']
-
+    Z_light_weighted = sim_data['Z_light_weighted']
     ylabel = "Stellar (light-weighted r-band) $Z/Z_{\odot}$"
-    output_file = f"{output_path}/Mstellar_Z_light_weighted_r_band_comparison.png"
-    plot_metallicity_mass_relation(Mstellar, Z_light_weighted_r_band, counter, ylabel, output_name_list, output_file)
+    output_file = f"{output_path}/Mstellar_Z_lw_comparison.png"
+    plot_metallicity_mass_relation(Mstellar, Z_light_weighted, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (light-weighted i-band) $Z/Z_{\odot}$"
-    output_file = f"{output_path}/Mstellar_Z_light_weighted_i_band_comparison.png"
-    plot_metallicity_mass_relation(Mstellar, Z_light_weighted_i_band, counter, ylabel, output_name_list, output_file)
 
-    ylabel = "Stellar (light-weighted Z-band) $Z/Z_{\odot}$"
-    output_file = f"{output_path}/Mstellar_Z_light_weighted_Z_band_comparison.png"
-    plot_metallicity_mass_relation(Mstellar, Z_light_weighted_Z_band, counter, ylabel, output_name_list, output_file)
 
 
     # # Plot parameters
