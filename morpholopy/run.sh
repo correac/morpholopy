@@ -8,6 +8,13 @@ python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLI
                      -n L50DTDtau2nu1p6 L25DTDtau2nu1p6 \
                      -m 1e9
 
+python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_ZdepB \
+                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_ZdepBoost_04Zsun \
+                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest2 \
+                     -c halo_0036.properties halo_0036.properties \
+                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
+                     -n L50DTDtau2nu1p6Zdep L25DTDtau2nu1p6Zdep \
+                     -m 1e9
 
 #python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_vBF \
 #                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
@@ -99,12 +106,12 @@ python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLI
 
 #python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_03_COLIBRE/L025N188_NewYields_SNIILinlo8hi40_DTDExptau2nu2 \
 #                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_03_COLIBRE/L025N188_NewYields_SNIILinlo8hi40_DTDExptau2nu2_Fe05 \
-#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_03_COLIBRE/L025N188_NewYields_SNIILinlo8hi40_DTDExptau2nu1p6_Fe05 \
-#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_03_COLIBRE/L025N188_NewYields_SNIILinlo8hi40_DTDExptau2nu1p6_Fe07 \
-#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_03_comparisons/DTDExpTau2nu2Comparison4 \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_03_COLIBRE/L025N188_NewYields_SNIILinlo8hi40_DTDExptau2nu2_Fe05O05 \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_03_COLIBRE/L025N188_NewYields_SNIILinlo8hi40_DTDExptau2nu2_O15Mg15 \
+#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/DTDExpTau2nu2Comparison \
 #                     -c halo_0036.properties halo_0036.properties halo_0036.properties halo_0036.properties \
 #                     -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
-#                     -n DTDExptau2nu2 DTDExptau2nu2Fe05Si05C15 DTDExptau2nu1p6Fe05Si05C15 DTDExptau2nu1p6Fe05Si04C15 \
+#                     -n DTDtau2nu2 DTDtau2nu2Fe05Si05C15 DTDExptau2nu2Fe05O05 DTDExptau2nu2Mg15O15 \
 #                     -m 5e8
 
 #python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo10hi40_DTDPowerLaw_O05Fe05 \
@@ -199,14 +206,14 @@ python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLI
 #                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_02_comparisons/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_OMgSi_boost \
 #                     -m 1e8
 
-python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05 \
-                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05_Fe15C15 \
-                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05_Fe2C2 \
-                     -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
-                     -c halo_0036.properties halo_0036.properties halo_0036.properties \
-                     -n O05Mg05Si05 O05Mg05Si05Fe15C15 O05Mg05Si06Fe2C2 \
-                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_03_new_plots/L025NYSampleE \
-                     -m 5e8
+#python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05 \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05_Fe15C15 \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05_Fe2C2 \
+#                     -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
+#                     -c halo_0036.properties halo_0036.properties halo_0036.properties \
+#                     -n O05Mg05Si05 O05Mg05Si05Fe15C15 O05Mg05Si06Fe2C2 \
+#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_03_new_plots/L025NYSampleE \
+#                     -m 5e8
 
 #python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05 \
 #                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_02_COLIBRE/L025N188_NewYields_SNIILinlo8hi100_DTDtau2nu1p6_O05Mg05Si05 \
