@@ -2,7 +2,6 @@ import numpy as np
 import h5py
 from typing import Tuple
 
-
 class ParticleIds:
     """
     A class providing the mapping between
@@ -16,23 +15,28 @@ class ParticleIds:
         path_to_snapshot_file: str,
     ):
 
+        self.path_to_groups_file = path_to_groups_file
+        self.path_to_particles_file = path_to_particles_file
+        self.path_to_snapshot_file = path_to_snapshot_file
+
+
         # Fetch ids
-        group_file = h5py.File(path_to_groups_file, "r")
-        particles_file = h5py.File(path_to_particles_file, "r")
-        snapshot_file = h5py.File(path_to_snapshot_file, "r")
+        # group_file = h5py.File(path_to_groups_file, "r")
+        # particles_file = h5py.File(path_to_particles_file, "r")
+        #snapshot_file = h5py.File(path_to_snapshot_file, "r")
 
         # Ids of stellar particles from snapshot
-        self.star_ids = snapshot_file["/PartType4/ParticleIDs"][:]
+        #self.star_ids = snapshot_file["/PartType4/ParticleIDs"][:]
         # Ids of gas particles from snapshot
-        self.gas_ids = snapshot_file["/PartType0/ParticleIDs"][:]
+        #self.gas_ids = snapshot_file["/PartType0/ParticleIDs"][:]
         # Particle ids from halo catalogue
-        self.particle_ids_in_haloes = particles_file["Particle_IDs"][:]
+        #self.particle_ids_in_haloes = particles_file["Particle_IDs"][:]
         # Halo ids from group catalogue
-        self.halo_ids = group_file["Offset"][:]
+        #self.halo_ids = group_file["Offset"][:]
 
-        group_file.close()
-        particles_file.close()
-        snapshot_file.close()
+        # group_file.close()
+        # particles_file.close()
+        #snapshot_file.close()
 
     def make_mask_gas(self, halo_id: int) -> Tuple[np.ndarray, np.ndarray]:
         """
@@ -99,4 +103,43 @@ class ParticleIds:
         mask_stars = mask_stars[mask_stars > 0]
 
         return mask_stars
+
+    def select_bound_particles(self, halo_index, particles_ids) -> Tuple[np.ndarray]:
+        """
+        Select particles that are gravitationally bound to halo
+        Parameters
+        ----------
+        halo_id: int
+        Halo id from the catalogue
+        Returns
+        -------
+        Output: Tuple[np.ndarray, np.ndarray]
+        A tuple containing ids of the stellar particles and gas particles
+        """
+        group_file = h5py.File(self.path_to_groups_file, "r")
+        particles_file = h5py.File(self.path_to_particles_file, "r")
+
+        # particles_file = h5py.File(f"{sim_info.directory}/{sim_info.catalogue_particles}", "r")
+        # group_file = h5py.File(f"{sim_info.directory}/{sim_info.catalogue_groups}", "r")
+
+        halo_start_position = group_file["Offset"][halo_index.astype('int')]
+        halo_end_position = group_file["Offset"][halo_index.astype('int') + 1]
+
+        particle_ids_in_halo = particles_file["Particle_IDs"][halo_start_position:halo_end_position]
+
+        group_file.close()
+        particles_file.close()
+
+        _, _, mask = np.intersect1d(
+            particle_ids_in_halo,
+            particles_ids,
+            assume_unique=True,
+            return_indices=True,
+        )
+
+        # Ensure that there are no negative indices
+        mask = mask[mask > 0]
+
+        return mask
+
 

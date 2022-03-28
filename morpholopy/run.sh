@@ -8,13 +8,6 @@ python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLI
                      -n L50DTDtau2nu1p6 L25DTDtau2nu1p6 \
                      -m 1e9
 
-python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_ZdepB \
-                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_ZdepBoost_04Zsun \
-                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest2 \
-                     -c halo_0036.properties halo_0036.properties \
-                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
-                     -n L50DTDtau2nu1p6Zdep L25DTDtau2nu1p6Zdep \
-                     -m 1e9
 
 #python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_vBF \
 #                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
