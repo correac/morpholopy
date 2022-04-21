@@ -1,30 +1,63 @@
 #!/bin/bash
 
-python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
-                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
-                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest1 \
-                     -c halo_0036.properties halo_0036.properties \
-                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
-                     -n L50DTDtau2nu1p6 L25DTDtau2nu1p6 \
-                     -m 1e9
+#python morpholopy.py -d  /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe1_ZdepBoost_04Zsun \
+#                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu2_Fe05_ZdepBoost_04Zsun \
+#                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu2_Fe1_ZdepBoost_04Zsun \
+#                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_ZdepBoost_04Zsun \
+#                      -n nu1p6Fe1Zdep nu2Fe05Zdep nu2Fe1Zdep nu1p6Fe05Zdep \
+#                      -c halo_0036.properties halo_0036.properties halo_0036.properties halo_0036.properties \
+#                      -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
+#                      -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ComparisonZdepDTDnuFe
 
-python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_ZdepB \
-                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_ZdepBoost_04Zsun \
-                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest2 \
-                     -c halo_0036.properties halo_0036.properties \
-                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
-                     -n L50DTDtau2nu1p6Zdep L25DTDtau2nu1p6Zdep \
-                     -m 1e9
+python morpholopy.py -d  /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu2_Fe05_ZdepBoost_04Zsun \
+                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
+                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu2_Fe05O07Mg07 \
+                      -n nu2Fe05ZdepBoost nu1p6Fe1O1Mg1 nu2Fe05O07Mg07 \
+                      -c halo_0036.properties halo_0036.properties halo_0036.properties \
+                      -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
+                      -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/L25N188ComparisonABCModels
 
-#python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_vBF \
+#python3 morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin10hi40_DTDExp2nu1p6_vBF \
+#                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin10hi40_DTDExp2nu1p6_Fe05O07Mg07 \
+#                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
+#                         /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05O07Mg07 \
+#                      -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/MinSNMassTest \
+#                      -c halo_0036.properties halo_0036.properties halo_0036.properties halo_0036.properties \
+#                      -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
+#                      -n SN10to40Fe1Mg1O1 SN10to40Fe05Mg07O07 SN8to40Fe1Mg1O1 SN8to40Fe05Mg07O07 \
+#                      -m 5e8
+
+#python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_ZdepB \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
+#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest2 \
+#                     -c halo_0036.properties halo_0036.properties \
+#                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
+#                     -n L50DTDtau2nu1p6Zdep L50DTDtau2nu1p6vBF \
+#                     -m 5e9
+
+#python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
 #                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
-#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05O05Mg05 \
-#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05O07Mg07 \
-#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConstantBoostFactorsComparison \
-#                     -c halo_0036.properties halo_0036.properties halo_0036.properties halo_0036.properties \
-#                     -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
-#                     -n DTDtau2nu1p6Fe05 DTDtau2nu1p6Fe1 DTDtau2nu1p6Fe05Mg05O05 DTDtau2nu1p6Fe05Mg07O07 \
-#                     -m 5e8
+#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest1 \
+#                     -c halo_0036.properties halo_0036.properties \
+#                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
+#                     -n L50DTDtau2nu1p6 L25DTDtau2nu1p6 \
+#                     -m 1e9
+
+#python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L050N376_NewYields_SNIILin8hi40_DTDExp2nu1p6_ZdepB \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_ZdepBoost_04Zsun \
+#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/ConvergenceTest2 \
+#                     -c halo_0036.properties halo_0036.properties \
+#                     -s colibre_0036.hdf5 colibre_0036.hdf5 \
+#                     -n L50DTDtau2nu1p6Zdep L25DTDtau2nu1p6Zdep \
+#                     -m 1e9
+
+#python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L012N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBF \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L012N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_vBFO07Mg07 \
+#                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L012N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_ZdepB \
+#                     -o /cosma/home/www/swift.dur.ac.uk/public_html/COLIBREPlots/ccorrea/AbundancePlots/2022_04_comparison/L12Comparison \
+#                     -c halo_0036.properties halo_0036.properties halo_0036.properties \
+#                     -s colibre_0036.hdf5 colibre_0036.hdf5 colibre_0036.hdf5 \
+#                     -n DTDtau2nu1p6Fe1O1Mg1 DTDtau2nu1p6Fe05O07Mg07 DTDtau2nu1p6Fe05Zdep
 
 #python morpholopy.py -d /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05_vBF \
 #                        /cosma7/data/dp004/dc-corr1/SIMULATION_RUNS/2022_04_COLIBRE/L025N188_NewYields_SNIILin8hi40_DTDExp2nu1p6_Fe05O05Mg05 \

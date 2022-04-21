@@ -124,8 +124,10 @@ def plot_SFH(sim_data, output_name_list, output_path):
     # Plot parameters
     params = {
         "font.size": 12,
-        "font.family": "Times",
-        "text.usetex": True,
+        "font.family": "STIXGeneral",
+        #"font.family": "Times",
+        "text.usetex": False,
+        "mathtext.fontset": "stix",        
         "figure.figsize": (4, 3),
         "figure.subplot.left": 0.18,
         "figure.subplot.right": 0.95,

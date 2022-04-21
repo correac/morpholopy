@@ -114,10 +114,17 @@ class SimInfo(ParticleIds):
             * self.to_kpc_units
         )
 
+        self.min_stellar_mass = 100 * self.snapshot.stars.masses[0].to('Msun')
+        self.min_gas_mass = 100 * self.snapshot.gas.masses[0].to('Msun')
+
+        print("Minimum stellar mass, [1e6Msun] ", self.min_stellar_mass.value/1e6)
+        print("Minimum gas mass, [1e6Msun] ", self.min_gas_mass.value/1e6)
+
         # Object containing halo properties (from halo catalogue)
         self.halo_data = HaloCatalogue(
             path_to_catalogue=f"{self.directory}/{self.catalogue_name}",
-            galaxy_min_stellar_mass=galaxy_min_stellar_mass,
+            galaxy_min_stellar_mass=self.min_stellar_mass,
+            galaxy_min_gas_mass=self.min_gas_mass,
         )
 
         # Init parent class with particle ids

@@ -26,8 +26,10 @@ def compare_stellar_abundances(sims_data, output_name_list, output_path):
     # Plot parameters
     params = {
         "font.size": 11,
-        "font.family": "Times",
-        "text.usetex": True,
+        "font.family": "STIXGeneral",
+        #"font.family": "Times",
+        "text.usetex": False,
+        "mathtext.fontset": "stix",
         "figure.figsize": (4, 3),
         "figure.subplot.left": 0.18,
         "figure.subplot.right": 0.95,
@@ -208,8 +210,10 @@ def plot_Fe_H_mass_relation(Mstellar, Fe_H, counter, ylabel, output_name_list, o
     # Plot parameters
     params = {
         "font.size": 12,
-        "font.family": "Times",
-        "text.usetex": True,
+        "font.family": "STIXGeneral",
+        #"font.family": "Times",
+        "text.usetex": False,
+        "mathtext.fontset": "stix",
         "figure.figsize": (4, 3),
         "figure.subplot.left": 0.18,
         "figure.subplot.right": 0.95,
@@ -271,8 +275,10 @@ def plot_Mg_Fe_mass_relation(Mstellar, Mg_Fe, counter, ylabel, output_name_list,
     # Plot parameters
     params = {
         "font.size": 12,
-        "font.family": "Times",
-        "text.usetex": True,
+        "font.family": "STIXGeneral",
+        #"font.family": "Times",
+        "text.usetex": False,
+        "mathtext.fontset": "stix",     
         "figure.figsize": (4, 3),
         "figure.subplot.left": 0.18,
         "figure.subplot.right": 0.95,
@@ -359,8 +365,10 @@ def plot_metallicity_mass_relation(Mstellar, Z, counter, ylabel, output_name_lis
     # Plot parameters
     params = {
         "font.size": 12,
-        "font.family": "Times",
-        "text.usetex": True,
+        "font.family": "STIXGeneral",
+        #"font.family": "Times",
+        "text.usetex": False,
+        "mathtext.fontset": "stix",
         "figure.figsize": (4, 3),
         "figure.subplot.left": 0.18,
         "figure.subplot.right": 0.95,

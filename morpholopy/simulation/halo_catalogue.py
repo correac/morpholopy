@@ -9,7 +9,9 @@ class HaloCatalogue:
     """
 
     def __init__(
-        self, path_to_catalogue: str, galaxy_min_stellar_mass: unyt.array.unyt_quantity
+        self, path_to_catalogue: str, 
+        galaxy_min_stellar_mass: unyt.array.unyt_quantity,
+        galaxy_min_gas_mass: unyt.array.unyt_quantity,
     ):
         """
         Parameters
@@ -19,7 +21,7 @@ class HaloCatalogue:
 
         galaxy_min_stellar_mass: unyt.array.unyt_quantity
         Minimum stellar mass in units of Msun. Objects whose stellar mass is lower than this
-        threshold are disregarded
+        threshold are disregarded. Same for gas mass.
         """
 
         self.path_to_catalogue = path_to_catalogue
@@ -38,9 +40,14 @@ class HaloCatalogue:
         #     mask, catalogue.apertures.mass_gas_30_kpc > unyt.unyt_quantity(0.0, "Msun")
         # )
 
+        #mask = np.logical_and(
+        #    catalogue.apertures.mass_star_30_kpc >= galaxy_min_stellar_mass,
+        #    catalogue.apertures.mass_gas_30_kpc > unyt.unyt_quantity(1e7, "Msun")
+        #)
+  
         mask = np.logical_and(
             catalogue.apertures.mass_star_30_kpc >= galaxy_min_stellar_mass,
-            catalogue.apertures.mass_gas_30_kpc > unyt.unyt_quantity(1e7, "Msun")
+            catalogue.apertures.mass_gas_30_kpc > galaxy_min_gas_mass
         )
 
         # Compute the number of haloes following the selection mask

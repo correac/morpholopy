@@ -379,7 +379,7 @@ def calculate_abundaces_from_MW_type_galaxies(sim_info):
 def calculate_abundaces_from_satellite_galaxies(sim_info):
 
     select_mass = np.where((sim_info.halo_data.log10_stellar_mass >= 6.) &
-                           (sim_info.halo_data.log10_stellar_mass <= 10.))[0]
+                           (sim_info.halo_data.log10_stellar_mass <= 11.))[0]
 
     select_satellites = np.where(sim_info.halo_data.type[select_mass] > 10)[0]
 
@@ -464,8 +464,10 @@ def plot_stellar_abundances(sim_info, output_path, abundance_data):
     # Plot parameters
     params = {
         "font.size": 11,
-        "font.family": "Times",
-        "text.usetex": True,
+        "font.family": "STIXGeneral",
+        #font.family": "Times",
+        "text.usetex": False,
+        "mathtext.fontset": "stix",
         "figure.figsize": (7, 3),
         "figure.subplot.left": 0.1,
         "figure.subplot.right": 0.95,

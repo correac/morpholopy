@@ -123,8 +123,8 @@ class ArgumentParser(object):
         print(f"Run names: {self.name_list}")
         print(f"Output directory: {self.output_directory}")
         print(f"Number of runs: {self.number_of_inputs}")
-        print(f"Number of galaxies to visualise: {self.number_of_galaxies}")
-        print(
-            f"Log10 of Minimum stellar mass: {log10(self.min_stellar_mass.value)} Msun"
-        )
+        #print(f"Number of galaxies to visualise: {self.number_of_galaxies}")
+        #print(
+        #    f"Log10 of Minimum stellar mass: {log10(self.min_stellar_mass.value)} Msun"
+        #)
         print("")
